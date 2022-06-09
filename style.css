@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: auto;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 60px;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+}
+
+h3{
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+.button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    background: #1d3a8a;
+    color: #fff;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+
+
+
+/* slider Css Start Here  */
+.slider {
+    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(./image/h11.jpg);
+    background-position: right bottom;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.slider .main-slide {
+    height: 650px;
+    position: relative;
+}
+
+.slider .slides .slide {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    transition: 1s;
+    opacity: 0;
+}
+
+.slider .slides .slide .image::after{
+    content: "";
+    position: absolute;
+    background: url(./image/sl11-ly3.png);
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: rotage_Image 5s linear infinite;
+    top: 30%;
+    z-index: -1;
+    right: 0;
+}
+@keyframes rotage_Image {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+.slider .slides .slide_active {
+    opacity: 1;
+    transition: 1s;
+}
+
+.slider .slides .slide_active .image {
+    opacity: 0;
+    animation: main_banner_effect 2s ease forwards;
+}
+
+@keyframes main_banner_effect {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.slider .slides .slide_active .content h1 {
+    opacity: 0;
+    animation: main_banner_h1_effect 2.5s ease forwards;
+}
+
+@keyframes main_banner_h1_effect {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.slider .slides .slide_active .content p {
+    opacity: 0;
+    animation: main_banner_p_effect 2.5s ease forwards;
+}
+
+@keyframes main_banner_p_effect {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.slider .slides .slide_active .content a {
+    opacity: 0;
+    animation: main_banner_a_effect 2.5s ease forwards;
+}
+
+@keyframes main_banner_a_effect {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slider .slides .slide .image {
+    width: 40%;
+    display: inline-flex;
+}
+
+.slider .slides .slide .image img {
+    width: 100%;
+}
+
+.slider .slides .slide .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    width: 60%;
+}
+
+.slider .slides .slide .content a {
+    margin-top: 30px;
+    text-align: center;
+    width: 150px;
+    padding: 10px 0;
+}
+
+.slider .main-slide .control_slide {
+    position: absolute;
+    top: 45%;
+    width: 100%;
+}
+
+.slider .main-slide .control_slide span {
+    position: absolute;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 50%;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, .5);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.slider .main-slide .control_slide span:hover {
+    background: rgba(255, 0, 0, 1);
+}
+
+.slider .main-slide .control_slide span:nth-child(1) {
+    left: -100%;
+}
+
+.slider .main-slide .control_slide span:nth-child(2) {
+    right: -100%;
+}
+
+.slider:hover .main-slide .control_slide span:nth-child(1) {
+    left: 0;
+}
+
+.slider:hover .main-slide .control_slide span:nth-child(2) {
+    right: 0;
+}
+
+/* slider Css End Here  */
+
+
+/* .incremental_counter Css start here  */
+
+.incremental_counter{
+    width: 100%;
+    padding: 50px 0;
+    background: #1d3a8a;
+}
+.incremental_counter .cards{
+    display: flex;
+}
+.incremental_counter .cards .card{
+    width: 300px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.incremental_counter .cards .card img{
+    width: 30%;
+}
+.incremental_counter .cards .card h3{
+    color: #fff;
+}
+.incremental_counter .cards .card P{
+    color: #fff;
+}
+
+/* .incremental_counter Css End here  */
