@@ -25,7 +25,7 @@ window.addEventListener("scroll", () => {
         const con_Position = number[i].getBoundingClientRect().top;
         const scr_position = window.innerHeight;
         if(con_Position < scr_position){
-            const speed = 500;
+            const speed = 1000;
             number.forEach(element => {
                 incNumber(element);
             });
